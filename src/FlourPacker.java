@@ -4,10 +4,16 @@ public class FlourPacker {
             return false;
         }
 
+        //5 kilos for each big bag
         int totalBigBagKilo = bigCount * 5;
+
+        //1 kilo for each small bag
         int totalSmallBagKilo = smallCount;
-        int totalKilo = totalBigBagKilo + totalSmallBagKilo;
-        if (totalKilo >= goal){
+
+        //find total kilo of both small and big
+        int sum = totalBigBagKilo + totalSmallBagKilo;
+
+        if ( (sum >= goal) && ((goal % 5) <= smallCount) ){
             return true;
         } else {
             return false;
@@ -50,3 +56,5 @@ public class FlourPacker {
 //NOTE: The method canPack should be defined as public static like we have been doing so far in the course.
 //
 //NOTE: Do not add a main method to the solution code.
+
+
